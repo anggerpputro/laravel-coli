@@ -64,20 +64,9 @@ class HaloController extends GembootController {
    * DELETE AKUN BY ID
   **/
   public function delete($id) {
-    // get data
-    $akun = Akun::find($id);
-
-    $akun_data = $akun->toArray();
-
-    if(empty($akun)) {
-      return response()->json('data kosong!', 404);
-    }
-
-    $deleted = $akun->delete();
-
-    return [
-      'deleted' => $akun_data,
-    ];
+    return $this->responseSuccessOrException(function() use ($id) {
+      return $this->service->delete($id);
+    });
   }
 
 }
