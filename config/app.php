@@ -227,6 +227,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'GembootBadRequestException' => Gemboot\Exceptions\BadRequestException::class,
+        'GembootForbiddenException' => Gemboot\Exceptions\ForbiddenException::class,
+        'GembootNotFoundException' => Gemboot\Exceptions\NotFoundException::class,
+        'GembootServerErrorException' => Gemboot\Exceptions\ServerErrorException::class,
+        'GembootUnauthorizedException' => Gemboot\Exceptions\UnauthorizedException::class,
     ],
 
 ];
