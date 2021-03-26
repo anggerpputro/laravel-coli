@@ -7,6 +7,16 @@ use App\Models\Akun;
 
 class HaloController extends Controller {
 
+  /**
+   * GET ALL AKUN
+  **/
+  public function index() {
+    return Akun::all();
+  }
+
+  /**
+   * CREATE AKUN
+  **/
   public function create() {
     $request = request();
 
@@ -29,11 +39,16 @@ class HaloController extends Controller {
     ];
   }
 
-
+  /**
+   * GET AKUN BY ID
+  **/
   public function show($id) {
     return Akun::findOrFail($id);
   }
 
+  /**
+   * GET AKUN BY USERNAME
+  **/
   public function showByUsername($username) {
     $akun = Akun::username($username)->firstOrFail();
 

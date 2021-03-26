@@ -23,14 +23,17 @@ Route::middleware('api')->group(function() {
   });
 
   Route::prefix('halo')->group(function() {
-    // /halo/create
-    Route::post('create', [HaloController::class, 'create']);
+    // /halo
+    Route::get('/', [HaloController::class, 'index']);
 
     // /halo/show
     Route::get('show/{id}', [HaloController::class, 'show']);
 
     // /halo/show-by-username
     Route::get('show-by-username/{username}', [HaloController::class, 'showByUsername']);
+
+    // /halo/create
+    Route::post('create', [HaloController::class, 'create']);
   });
 
 });
