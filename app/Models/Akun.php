@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
+use Gemboot\Models\CoreModel as GembootModel;
 
-class Akun extends Model
+class Akun extends GembootModel
 {
 
   protected $table = "akun";
